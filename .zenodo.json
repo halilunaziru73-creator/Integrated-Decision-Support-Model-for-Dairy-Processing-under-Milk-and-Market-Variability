@@ -1,0 +1,21 @@
+{
+  "title": "Development of an Integrated Decision-Support Model for Dairy Processing Systems under Milk and Market Variability",
+  "description": "Integrated decision-support system for dairy processing product-mix decisions: LOOCV model comparison, bootstrap CIs, LP production planning, Monte Carlo risk simulation, VIF/PCA diagnostics, and permutation importance.",
+  "creators": [
+    {
+      "name": "Halilu, Naziru",
+      "orcid": "0009-0006-2324-9599"
+    }
+  ],
+  "keywords": [
+    "decision support system",
+    "dairy processing",
+    "linear programming",
+    "Monte Carlo simulation",
+    "risk analysis",
+    "operations research"
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open"
+}
