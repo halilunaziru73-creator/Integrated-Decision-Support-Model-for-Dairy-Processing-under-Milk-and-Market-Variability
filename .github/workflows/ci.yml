@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -25,15 +28,26 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest flake8
+          pip install pytest flake8 pytest-cov coverage-badge
 
       - name: Lint (flake8, errors only)
         run: flake8 src --count --select=E9,F63,F7,F82 --show-source --statistics
 
-      - name: Run tests
-        run: pytest tests/ -v
+      - name: Run tests with coverage
+        run: pytest tests/ -v --cov=src --cov-report=term-missing
 
       - name: Run full pipeline (smoke test)
         run: |
           cd src
           python main.py --n-sims 200
+
+      - name: Generate coverage badge
+        if: matrix.python-version == '3.11' && github.event_name == 'push'
+        run: coverage-badge -f -o coverage.svg
+
+      - name: Commit updated coverage badge
+        if: matrix.python-version == '3.11' && github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet coverage.svg || (git add coverage.svg && git commit -m "Update coverage badge [skip ci]" && git push)
