@@ -1,21 +1,24 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: If you use this software, please cite it as below.
 type: software
-title: "Development of an Integrated Decision-Support Model for Dairy Processing Systems under Milk and Market Variability"
+title: Development of an Integrated Decision-Support Model for Dairy Processing Systems
+  under Milk and Market Variability
 authors:
-  - family-names: Halilu
-    given-names: Naziru
-repository-code: "https://github.com/halilunaziru73-creator/Integrated-Decision-Support-Model-for-Dairy-Processing-under-Milk-and-Market-Variability"
+- family-names: Halilu
+  given-names: Naziru
+  orcid: https://orcid.org/0009-0006-2324-9599
+repository-code: https://github.com/halilunaziru73-creator/Integrated-Decision-Support-Model-for-Dairy-Processing-under-Milk-and-Market-Variability
 license: MIT
-date-released: "2026-08-02"
+date-released: '2026-08-02'
 keywords:
-  - decision support system
-  - dairy processing
-  - linear programming
-  - Monte Carlo simulation
-  - risk analysis
-  - operations research
+- decision support system
+- dairy processing
+- linear programming
+- Monte Carlo simulation
+- risk analysis
+- operations research
 identifiers:
-  - type: doi
-    value: "10.5281/zenodo.21760085"
-    description: "Archived snapshot of version v1.0.0 on Zenodo"
+- type: doi
+  value: 10.5281/zenodo.21760085
+  description: Archived snapshot of version v1.0.0 on Zenodo
+version: 1.0.0
