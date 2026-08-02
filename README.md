@@ -1,6 +1,7 @@
 # Development of an Integrated Decision-Support Model for Dairy Processing Systems under Milk and Market Variability
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21760085.svg)](https://doi.org/10.5281/zenodo.21760085)
+[![Coverage](https://raw.githubusercontent.com/halilunaziru73-creator/Integrated-Decision-Support-Model-for-Dairy-Processing-under-Milk-and-Market-Variability/main/coverage.svg)](https://github.com/halilunaziru73-creator/Integrated-Decision-Support-Model-for-Dairy-Processing-under-Milk-and-Market-Variability/actions)
 
 A decision-support system (DSS) for daily product-mix decisions (Cheese /
 Butter / Milk Powder) in a dairy processing plant, combining **model
