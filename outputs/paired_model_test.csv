@@ -1,0 +1,2 @@
+model_a,model_b,mean_abs_error_diff_EUR,paired_t_stat,paired_t_p,wilcoxon_stat,wilcoxon_p,n
+Ridge,ElasticNet,16.85,2.25,0.051,9.0,0.0645,10

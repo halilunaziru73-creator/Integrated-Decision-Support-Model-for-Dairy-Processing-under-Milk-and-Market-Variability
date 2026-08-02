@@ -1,0 +1,4 @@
+Product_Type,mean_EUR,std_EUR,p5_EUR,p95_EUR,prob_loss_vs_zero,Prob_Best_Choice
+Cheese,20272.06,789.98,18950.9,21598.47,0.0,1.0
+Butter,19502.66,789.98,18181.51,20829.07,0.0,0.0
+Milk Powder,19924.46,789.98,18603.3,21250.87,0.0,0.0

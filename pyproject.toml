@@ -1,0 +1,25 @@
+[project]
+name = "dairy-decision-support-model"
+version = "0.2.0"
+description = "Integrated Decision-Support Model for Dairy Processing Systems under Milk and Market Variability"
+authors = [{ name = "Naziru Halilu" }]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "scikit-learn>=1.3",
+    "matplotlib>=3.7",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "flake8>=6.0"]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
