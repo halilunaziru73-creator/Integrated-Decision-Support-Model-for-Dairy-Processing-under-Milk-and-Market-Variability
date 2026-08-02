@@ -1,0 +1,9 @@
+feature,VIF,flag
+Milk_Collection_L,280.6075675268416,severe
+storage_utilization,260.254478119837,severe
+capacity_utilization,109.09210104712214,severe
+Market_Price_EUR_per_L,75.51342769070062,severe
+electricity_cost_per_L,29.844915268216873,severe
+transport_cost_per_L,14.854973605477111,severe
+demand_gap,11.225357912478085,severe
+milk_quality_index,5.716444600675794,moderate

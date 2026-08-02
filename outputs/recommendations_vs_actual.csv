@@ -1,0 +1,11 @@
+Date,Actual_Product,Actual_Profit_EUR,Model_Recommended_Product,Model_Predicted_Profit_EUR,Matches_Actual_Choice
+2026-10-01,Cheese,19280,Cheese,19276.56,True
+2026-10-02,Butter,18540,Cheese,19580.25,False
+2026-10-03,Milk Powder,20110,Cheese,20401.01,False
+2026-10-04,Cheese,21420,Cheese,21331.86,True
+2026-10-05,Butter,19110,Cheese,20322.86,False
+2026-10-06,Cheese,22350,Cheese,21909.66,True
+2026-10-07,Milk Powder,19460,Cheese,19516.42,False
+2026-10-08,Butter,19870,Cheese,20719.21,False
+2026-10-09,Cheese,22910,Cheese,22697.26,True
+2026-10-10,Milk Powder,19630,Cheese,20275.91,False
