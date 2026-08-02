@@ -154,7 +154,16 @@ visible rather than papered over with a single confident-looking number.
 - `outputs/recommendations_vs_actual.csv` is written every run — track it
   over time to monitor real-world recommendation accuracy.
 
-## Running it
+## How to Run the Code
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/halilunaziru73-creator/Integrated-Decision-Support-Model-for-Dairy-Processing-under-Milk-and-Market-Variability.git
+cd Integrated-Decision-Support-Model-for-Dairy-Processing-under-Milk-and-Market-Variability
+```
+
+### 2. Install dependencies and run
 
 ```bash
 pip install -r requirements.txt
