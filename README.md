@@ -52,7 +52,7 @@ advance. This system answers three related questions:
 │   ├── permutation_importance.csv / paired_model_test.csv
 │   └── figures/                    # All generated charts (16 total)
 ├── .github/workflows/ci.yml        # Runs tests + full pipeline smoke test on every push
-├── Dairy_DSS_Q1_Paper_extended.docx  # Full manuscript with clickable internal citations
+├── Dairy_DSS_Paper.docx  # Full manuscript with clickable internal citations
 ├── Dockerfile
 ├── pyproject.toml
 ├── requirements.txt
@@ -237,7 +237,7 @@ All 6 additional figures are written to `outputs/figures/`; all tables to
 
 ## Paper
 
-[`Dairy_DSS_Q1_Paper_extended.docx`](./Dairy_DSS_Q1_Paper_extended.docx) —
+[`Dairy_DSS_Paper.docx`](./Dairy_DSS_Paper.docx) —
 a Q1-journal-style manuscript covering the full methodology, results, and
 the extended diagnostics above, with every in-text citation as a clickable
 internal hyperlink to its entry in the References list.
