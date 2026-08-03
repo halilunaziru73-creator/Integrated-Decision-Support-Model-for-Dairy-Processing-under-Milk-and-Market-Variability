@@ -53,3 +53,4 @@ jobs:
           git add coverage.svg
           git diff --cached --quiet || (git commit -m "Update coverage badge [skip ci]" && git push)
 # trigger retry
+# retry after fixing workflow permissions
