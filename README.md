@@ -239,7 +239,7 @@ All 6 additional figures are written to `outputs/figures/`; all tables to
 ## Paper
 
 [`Dairy_DSS_Paper.docx`](./Dairy_DSS_Paper.docx) —
-a Q1-journal-style manuscript covering the full methodology, results, and
+a manuscript covering the full methodology, results, and
 the extended diagnostics above, with every in-text citation as a clickable
 internal hyperlink to its entry in the References list.
 
