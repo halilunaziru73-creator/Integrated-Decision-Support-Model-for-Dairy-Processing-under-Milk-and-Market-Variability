@@ -5,6 +5,8 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  release:
+    types: [published]
 
 jobs:
   test:
@@ -21,22 +23,20 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install dependencies
+      - name: Install package and dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -e .
           pip install pytest flake8 pytest-cov coverage-badge
 
       - name: Lint (flake8, errors only)
-        run: flake8 src --count --select=E9,F63,F7,F82 --show-source --statistics
+        run: flake8 dairy_dss --count --select=E9,F63,F7,F82 --show-source --statistics
 
       - name: Run tests with coverage
-        run: pytest tests/ -v --cov=src --cov-report=term-missing
+        run: pytest tests/ -v --cov=dairy_dss --cov-report=term-missing
 
       - name: Run full pipeline (smoke test)
-        run: |
-          cd src
-          python main.py --n-sims 200
+        run: dairy-dss --n-sims 200
 
       - name: Generate coverage badge
         if: matrix.python-version == '3.11' && github.event_name == 'push'
@@ -49,3 +49,28 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add coverage.svg
           git diff --cached --quiet || (git commit -m "Update coverage badge [skip ci]" && git push)
+
+  publish-to-pypi:
+    needs: test
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build distribution
+        run: |
+          python -m pip install --upgrade pip build
+          python -m build
+
+      - name: Publish to PyPI
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          pip install twine
+          twine upload dist/*
