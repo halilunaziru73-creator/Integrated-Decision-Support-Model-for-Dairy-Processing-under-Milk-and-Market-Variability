@@ -9,21 +9,17 @@ output shape.
 Run with:  pytest tests/ -v
 """
 
-import os
-import sys
 import numpy as np
 import pandas as pd
 import pytest
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
-
-from preprocessing import engineer_features, load_processed  # noqa: E402
-from data_validation import validate, validate_schema, DataValidationError  # noqa: E402
-from predictive_model import train, predict_profit  # noqa: E402
-from decision_engine import recommend_product, build_day_conditions_from_row, PRODUCT_TYPES  # noqa: E402
-from optimization import estimate_margins_and_shares, optimize_daily_allocation  # noqa: E402
-from risk_simulation import simulate_profit_distribution  # noqa: E402
-from config import DATA_PATH  # noqa: E402
+from dairy_dss.preprocessing import engineer_features, load_processed
+from dairy_dss.data_validation import validate, validate_schema, DataValidationError
+from dairy_dss.predictive_model import train, predict_profit
+from dairy_dss.decision_engine import recommend_product, build_day_conditions_from_row, PRODUCT_TYPES
+from dairy_dss.optimization import estimate_margins_and_shares, optimize_daily_allocation
+from dairy_dss.risk_simulation import simulate_profit_distribution
+from dairy_dss.config import DATA_PATH
 
 
 @pytest.fixture(scope="module")
