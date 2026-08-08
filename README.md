@@ -11,6 +11,8 @@ simulation** — with tests, CI, logging, and containerization so it runs as
 real software, not just a notebook.
 
 
+![Graphical Abstract](graphical_abstract.png)
+
 ## Problem, Methodology, and Results
 
 **Problem.** Dairy processing plants must decide daily, under considerable uncertainty, which product (cheese, butter, or milk powder) to manufacture from that day's raw milk to maximise profit — a decision complicated by fluctuating milk quality, transport and energy costs, and market price and demand.
