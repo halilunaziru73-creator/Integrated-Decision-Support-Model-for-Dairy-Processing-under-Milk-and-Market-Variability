@@ -60,7 +60,7 @@
   <p class="metric">Ridge model: R² = 0.859, MAE = €450.68</p>
   <div class="card">
     <p class="sim-label">Graphical abstract</p>
-    <img class="figure" src="../graphical_abstract.png" alt="Graphical abstract for Dairy Processing Decision-Support Model">
+    <img class="figure" src="graphical_abstract.png" alt="Graphical abstract for Dairy Processing Decision-Support Model">
     <p class="sim-label">Process simulation</p>
     <svg id="sim" viewBox="0 0 680 100" role="img" aria-label="Animated process simulation">
       <line x1="40" y1="55" x2="640" y2="55" stroke="var(--node)" stroke-width="1"/>
@@ -87,7 +87,7 @@
     <button class="ask-btn" id="ask-btn" onclick="sendQuestion()">Send question</button>
     <p class="ask-status" id="ask-status"></p>
   </div>
-  <a class="back" href="../README.md">&larr; Back to README</a>
+  <a class="back" href="https://github.com/halilunaziru73-creator/Integrated-Decision-Support-Model-for-Dairy-Processing-under-Milk-and-Market-Variability">&larr; Back to GitHub repository</a>
 </div>
 <script>
 async function sendQuestion() {
@@ -133,7 +133,7 @@ async function sendQuestion() {
 }
 </script>
 <script>
-const steps = [{"t": "10-day operational data", "img": "../outputs/figures/quality_vs_profit.png", "d": "Real plant data, not a simulation \u2014 profit numbers, milk chemistry (fat, protein, lactose, somatic cell count), and market prices from an actual dairy's daily operations in October 2026."}, {"t": "Model comparison", "img": "../outputs/figures/model_comparison.png", "d": "Four regressors (Ridge, Elastic Net, Random Forest, Gradient Boosting) were compared under leave-one-out cross-validation. We also tried the naive shortcut: one model, no CV, no uncertainty check \u2014 it would have confidently told the plant to always make cheese, with no warning the conclusion rested on thin evidence."}, {"t": "Feature reliability", "img": "../outputs/figures/bootstrap_coefficients.png", "d": "Bootstrap-resampled confidence intervals separate the engineered features we can actually trust from the ones that just look convincing on ten days of data."}, {"t": "LP allocation", "img": "../outputs/figures/lp_optimal_allocation.png", "d": "The linear-programming layer, run under real capacity constraints, revealed something the profit model alone couldn't see: market demand \u2014 not milk quality \u2014 was the binding constraint on the day tested."}, {"t": "Risk simulation", "img": "../outputs/figures/risk_distribution.png", "d": "Monte Carlo simulation propagates every input uncertainty forward into a full profit-risk distribution \u2014 the difference between a forecast that says '70% chance of rain' versus one that just says 'rain'."}, {"t": "Transparent reporting", "img": "../outputs/figures/var_cvar.png", "d": "A Cpk of 1.11 on milk fat content is in-control but falls short of the 1.33 industry benchmark \u2014 flagged honestly via Value-at-Risk and Conditional-Value-at-Risk tail measures, pointing to a process fix upstream no amount of clever modelling can substitute for."}];
+const steps = [{"t": "10-day operational data", "img": "figures/quality_vs_profit.png", "d": "Real plant data, not a simulation \u2014 profit numbers, milk chemistry (fat, protein, lactose, somatic cell count), and market prices from an actual dairy's daily operations in October 2026."}, {"t": "Model comparison", "img": "figures/model_comparison.png", "d": "Four regressors (Ridge, Elastic Net, Random Forest, Gradient Boosting) were compared under leave-one-out cross-validation. We also tried the naive shortcut: one model, no CV, no uncertainty check \u2014 it would have confidently told the plant to always make cheese, with no warning the conclusion rested on thin evidence."}, {"t": "Feature reliability", "img": "figures/bootstrap_coefficients.png", "d": "Bootstrap-resampled confidence intervals separate the engineered features we can actually trust from the ones that just look convincing on ten days of data."}, {"t": "LP allocation", "img": "figures/lp_optimal_allocation.png", "d": "The linear-programming layer, run under real capacity constraints, revealed something the profit model alone couldn't see: market demand \u2014 not milk quality \u2014 was the binding constraint on the day tested."}, {"t": "Risk simulation", "img": "figures/risk_distribution.png", "d": "Monte Carlo simulation propagates every input uncertainty forward into a full profit-risk distribution \u2014 the difference between a forecast that says '70% chance of rain' versus one that just says 'rain'."}, {"t": "Transparent reporting", "img": "figures/var_cvar.png", "d": "A Cpk of 1.11 on milk fat content is in-control but falls short of the 1.33 industry benchmark \u2014 flagged honestly via Value-at-Risk and Conditional-Value-at-Risk tail measures, pointing to a process fix upstream no amount of clever modelling can substitute for."}];
 let idx = 0;
 let timer = null;
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
