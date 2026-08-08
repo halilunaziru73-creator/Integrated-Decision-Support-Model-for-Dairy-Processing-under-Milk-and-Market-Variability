@@ -31,6 +31,16 @@
   .bubble { background:var(--bg); border-radius:12px; border-top-left-radius:4px; padding:0.85rem 1rem;
     min-height:52px; display:flex; align-items:center; font-size:14.5px; line-height:1.6; }
   .figure { width:100%; border-radius:10px; border:1px solid var(--border); margin-bottom:1.25rem; display:block; }
+  .ask-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-top:1.25rem; }
+  .ask-title { font-size:15px; font-weight:600; margin:0 0 4px; }
+  .ask-sub { font-size:13px; color:var(--text-secondary); margin:0 0 1rem; }
+  .ask-field { width:100%; padding:10px 12px; border-radius:8px; border:1px solid var(--border);
+    background:var(--bg); color:var(--text); font-size:14px; font-family:inherit; margin-bottom:10px; }
+  textarea.ask-field { min-height:90px; resize:vertical; }
+  .ask-btn { background:var(--accent-text); color:#fff; border:none; border-radius:8px; padding:10px 18px;
+    font-size:14px; font-weight:500; cursor:pointer; }
+  .ask-btn:hover { opacity:.9; }
+  .ask-note { font-size:12px; color:var(--text-secondary); margin-top:8px; }
   .back { display:inline-block; margin-top:1.5rem; font-size:13px; color:var(--accent-text); text-decoration:none; }
   @media (prefers-color-scheme: dark) {
     :root { --bg:#171715; --card:#201f1c; --border:#37362f; --text:#eceae2; --text-secondary:#9c9a92;
@@ -60,8 +70,31 @@
       </div>
     </div>
   </div>
+  <div class="ask-card">
+    <p class="ask-title">Ask a question about this work</p>
+    <p class="ask-sub">Send Naziru a question directly — it opens as an email you can send from your own inbox.</p>
+    <input class="ask-field" id="ask-name" type="text" placeholder="Your name (optional)">
+    <input class="ask-field" id="ask-email" type="email" placeholder="Your email (optional, so Naziru can reply)">
+    <textarea class="ask-field" id="ask-question" placeholder="What would you like to ask about this project?"></textarea>
+    <button class="ask-btn" onclick="sendQuestion()">Send question</button>
+    <p class="ask-note">Opens your email app with the message pre-filled. Nothing is sent until you press send there.</p>
+  </div>
   <a class="back" href="../README.md">&larr; Back to README</a>
 </div>
+<script>
+function sendQuestion() {
+  const name = document.getElementById('ask-name').value.trim();
+  const email = document.getElementById('ask-email').value.trim();
+  const question = document.getElementById('ask-question').value.trim();
+  if (!question) { document.getElementById('ask-question').focus(); return; }
+  const subject = encodeURIComponent('Question about: Dairy Processing Decision-Support Model');
+  let body = question;
+  if (name) body += '\n\n\u2014 ' + name;
+  if (email) body += ' (' + email + ')';
+  const mailto = 'mailto:halilunaziru73@gmail.com?subject=' + subject + '&body=' + encodeURIComponent(body);
+  window.location.href = mailto;
+}
+</script>
 <script>
 const steps = [{"t": "10-day operational data", "d": "Real plant data, not a simulation \u2014 profit numbers, milk chemistry, and market prices from an actual dairy's daily operations."}, {"t": "4-model regression comparison", "d": "We tried the naive shortcut too: one model, no cross-validation, no uncertainty check \u2014 it would have confidently told the plant to always make cheese, with no warning that the conclusion rested on thin evidence."}, {"t": "Bootstrap feature reliability", "d": "Bootstrap confidence intervals separate the features we can actually trust from the ones that just look convincing on ten days of data."}, {"t": "LP capacity allocation", "d": "The linear-programming layer revealed something the profit model alone couldn't see: market demand, not milk quality, was the real bottleneck on the day tested."}, {"t": "Monte Carlo risk simulation", "d": "Instead of one profit number, the plant gets a full risk distribution \u2014 the difference between a weather forecast that says '70% chance of rain' versus one that just says 'rain'."}, {"t": "Transparent reporting", "d": "A Cpk of 1.11 on milk fat content is in-control but falls short of the 1.33 industry benchmark \u2014 flagged honestly, pointing to a process fix upstream that no amount of clever modelling can substitute for."}];
 let idx = 0;
