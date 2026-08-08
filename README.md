@@ -10,6 +10,15 @@ selection with statistical rigor**, a **rule-based decision engine**,
 simulation** — with tests, CI, logging, and containerization so it runs as
 real software, not just a notebook.
 
+
+## Problem, Methodology, and Results
+
+**Problem.** Dairy processing plants must decide daily, under considerable uncertainty, which product (cheese, butter, or milk powder) to manufacture from that day's raw milk to maximise profit — a decision complicated by fluctuating milk quality, transport and energy costs, and market price and demand.
+
+**Methodology.** An integrated decision-support model (DSS) was developed combining: (i) a leave-one-out cross-validated comparison of four regression algorithms (Ridge, Elastic Net, Random Forest, Gradient Boosting) for profit prediction; (ii) bootstrap-resampled confidence intervals to quantify which engineered features have a statistically reliable effect at small sample sizes; (iii) a linear-programming layer for capacity-constrained, multi-product allocation; and (iv) Monte Carlo simulation to translate input uncertainty into profit-risk distributions. The model was demonstrated on ten days of operational data from a dairy plant (October 2026).
+
+**Results.** The Ridge model achieved the best leave-one-out cross-validation performance (MAE = €450.68, R² = 0.859). Statistical process control of milk fat content indicated a Cpk of 1.11 — adequately capable but not highly robust. The model systematically favoured cheese production at this sample size, a result explicitly attributed to limited within-product variation in the training data rather than a general superiority of cheese. Extended diagnostics (VIF, PCA, permutation importance, full-horizon LP re-allocation, VaR/CVaR tail-risk measures, sensitivity surfaces, and paired significance testing) were reported to stress-test the model's reliability.
+
 ## Problem framing
 
 Each day, a plant receives raw milk of varying quality (fat, protein,
