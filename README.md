@@ -13,6 +13,10 @@ real software, not just a notebook.
 
 ![Graphical Abstract](graphical_abstract.png)
 
+**Workflow sketch**
+
+![Workflow Sketch](workflow_sketch.png)
+
 [View interactive graphical abstract →](https://halilunaziru73-creator.github.io/Integrated-Decision-Support-Model-for-Dairy-Processing-under-Milk-and-Market-Variability/)
 
 ## Problem, Methodology, and Results
