@@ -212,8 +212,7 @@ test on Python 3.10/3.11/3.12 on every push.
 ## Extended analysis (`src/extended_analysis.py`)
 
 A further layer of diagnostics beyond the core pipeline, matching the kind
-of checks a rigorous empirical paper (or a Q1-journal reviewer) would
-expect:
+of checks a rigorous empirical paper would expect:
 
 1. **Variance Inflation Factors (VIF)** for every engineered numeric
    feature — several show severe multicollinearity (e.g.
