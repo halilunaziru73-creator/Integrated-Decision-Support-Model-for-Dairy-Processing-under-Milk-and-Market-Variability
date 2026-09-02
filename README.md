@@ -143,6 +143,16 @@ product (paired scenarios, so "probability X beats Y" is directly
 computable), producing mean, downside (p5)/upside (p95), and win
 probability per product.
 
+**Limitation, disclosed rather than smoothed over:** because the profit
+model is linear (Ridge regression) with no product-specific interaction
+terms for price, quality, or energy cost, every product's simulated profit
+distribution comes out with the *same* standard deviation (789.98 EUR in
+the latest run), only the mean shifts between products. In other words,
+the model currently captures which product is more profitable on average,
+but not whether one product is genuinely more exposed to market swings
+than another. A model with product-specific interaction terms would be
+needed to capture that, and isn't implemented here.
+
 ### 6. LP optimization (`optimization.py`)
 A genuinely different question from the decision engine: **given the
 plant could split milk across multiple product lines simultaneously, what
